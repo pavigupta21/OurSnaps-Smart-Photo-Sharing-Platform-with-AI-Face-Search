@@ -1,0 +1,122 @@
+.album-settings-card{
+    margin-top:24px;
+}
+.danger-zone {
+    border: 1px solid #fecaca;
+    background: linear-gradient(180deg, #fef2f2, #fef5f5);
+}
+
+.danger-zone-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.danger-zone-icon {
+    font-size: 1.2rem;
+}
+
+.danger-zone h3 {
+    color: #dc2626;
+    margin: 0;
+}
+
+.danger-zone-text {
+    color: #7f1d1d;
+    margin-bottom: 15px;
+}
+
+.danger-zone-list {
+    margin: 15px 0 25px;
+    padding-left: 0;
+    color: #991b1b;
+    list-style: none;
+}
+
+.danger-zone-list li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 8px;
+    font-size: .92rem;
+}
+
+.danger-zone-list li::before {
+    content: "✕";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #dc2626;
+    font-size: .8rem;
+    font-weight: 700;
+}
+.delete-album-btn {
+    border: none;
+    cursor: pointer;
+    background: #dc2626;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: .95rem;
+    transition: background .2s ease, transform .15s ease, box-shadow .2s ease;
+}
+
+.delete-album-btn:hover:not(:disabled) {
+    background: #b91c1c;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(220, 38, 38, .25);
+}
+
+.delete-album-btn:disabled {
+    background: #fca5a5;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+.delete-album-modal {
+    background: white;
+    width: 440px;
+    max-width: 90%;
+    padding: 36px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+
+
+.delete-album-modal h2 {
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+.delete-album-modal p {
+    color: #64748b;
+    font-size: .92rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+.delete-album-modal .modal-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.delete-album-modal .btn-cancel {
+    padding: 12px 22px;
+    border-radius: 12px;
+    font-weight: 600;
+    border: 1px solid #e2e8f0;
+    background: #fff;
+    color: #475569;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.delete-album-modal .btn-cancel:hover {
+    background: #f8fafc;
+}
+.btn-cancel:disabled{
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}

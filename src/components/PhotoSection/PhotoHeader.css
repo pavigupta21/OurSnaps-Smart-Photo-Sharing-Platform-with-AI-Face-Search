@@ -1,0 +1,95 @@
+.albumpg-section-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:25px;
+}
+
+.albumpg-primary-btn{
+    border:none;
+    cursor:pointer;
+
+    background:#4f46e5;
+    color:white;
+
+    padding:12px 22px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    transition:.2s;
+}
+
+.albumpg-primary-btn:hover{
+    background:#4338ca;
+}
+.photo-action-buttons{
+    display:flex;
+    gap:12px;
+    margin-bottom:20px;
+}
+.upload-disabled-btn {
+    opacity: 0.65;
+}
+
+.upload-disabled-btn:hover {
+    cursor: not-allowed;
+    transform: none !important;
+}
+.albumpg-secondary-btn{
+    padding:12px 22px;
+
+    border:1px solid #d1d5db;
+    border-radius:12px;
+
+    background:white;
+
+    font-size:15px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.albumpg-secondary-btn:hover{
+    background:#f3f4f6;
+}
+.delete-selected-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+
+    padding:12px 22px;
+
+    border-radius:12px;
+    border:1px solid #ef4444;
+
+    background:#fff5f5;
+    color:#dc2626;
+
+    font-size:15px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:all .25s ease;
+}
+
+.delete-selected-btn:hover:not(:disabled){
+    background:#ef4444;
+    color:white;
+    transform:translateY(-1px);
+    box-shadow:0 8px 20px rgba(239,68,68,.22);
+}
+
+.delete-selected-btn:disabled{
+    opacity:.45;
+    cursor:not-allowed;
+    background:#fafafa;
+    color:#999;
+    border-color:#ddd;
+}

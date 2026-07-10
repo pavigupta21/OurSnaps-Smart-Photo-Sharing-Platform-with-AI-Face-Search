@@ -1,0 +1,32 @@
+.photo-subtabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.photo-tab {
+  border: none;
+  padding: 10px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+
+  background: #f3f4f6;
+  color: #1f2937;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: all 0.2s ease;
+}
+
+.photo-tab.active {
+  background: #5b4df0;
+  color: white;
+}
+.photo-tab.disabled{
+    opacity:0.6;
+    cursor:not-allowed;
+}
+
+.photo-tab.disabled:hover{
+    transform:none;
+}

@@ -1,0 +1,7 @@
+flask
+insightface
+opencv-python
+numpy
+faiss-cpu
+onnxruntime
+requests

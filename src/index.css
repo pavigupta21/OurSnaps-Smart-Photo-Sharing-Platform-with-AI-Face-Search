@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+  --card-bg: rgba(255, 255, 255, 0.96);
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --primary-light: #e0e7ff;
+  --border-color: #cbd5e1;
+  --border-focus: #818cf8;
+  --error: #ef4444;
+  --success: #10b981;
+  --input-bg: #f8fafc;
+  
+  font-family: 'Inter', sans-serif;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg-gradient);
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.toast-notification.success{
+    background:#10b981;
+}
+
+.toast-notification.error{
+    background:#ef4444;
+}
+
+.toast-notification.info{
+    background:#4f46e5;
+}
+.toast-notification.success .toast-icon{
+    color:white;
+}
+
+.toast-notification.error .toast-icon{
+    color:white;
+}

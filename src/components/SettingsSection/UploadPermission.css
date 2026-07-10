@@ -1,0 +1,342 @@
+.album-settings-card{
+    margin-top:24px;
+}
+.settings-section-card {
+    margin-top: 24px;
+}
+.settings-radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.settings-radio-option {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 18px 20px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 14px;
+    cursor: pointer;
+    background: #fff;
+    transition: border-color .2s ease, background .2s ease, box-shadow .2s ease, transform .15s ease;
+    position: relative;
+}
+
+.settings-radio-option:hover {
+    border-color: #a5b4fc;
+    background: #fafaff;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, .08);
+}
+
+.settings-radio-option:has(input:checked) {
+    border-color: #6366f1;
+    background: linear-gradient(135deg, #f5f6ff, #fbfaff);
+    box-shadow: 0 4px 14px rgba(99, 102, 241, .14);
+}
+
+.settings-radio-option strong {
+    display: block;
+    color: #0f172a;
+    margin-bottom: 4px;
+    font-size: .98rem;
+}
+
+.settings-radio-option p {
+    color: #64748b;
+    font-size: .9rem;
+    margin: 0;
+    line-height: 1.45;
+}
+
+/* custom radio circle */
+.settings-radio-option input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    margin-top: 3px;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    border-radius: 50%;
+    border: 2px solid #cbd5e1;
+    background: #fff;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.settings-radio-option input[type="radio"]::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #818cf8, #6366f1);
+    transform: scale(0);
+    transition: transform .15s ease;
+}
+
+.settings-radio-option input[type="radio"]:checked {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, .12);
+}
+
+.settings-radio-option input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
+.settings-radio-option input[type="radio"]:hover {
+    border-color: #818cf8;
+}
+.settings-option-body{
+    flex:1;
+}
+.selected-members-settings{
+
+    width:100%;
+
+    margin-top:16px;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:18px;
+
+    border:1px solid #dbeafe;
+    border-radius:14px;
+
+    background:#f8faff;
+
+    box-sizing:border-box;
+}
+.selected-members-note{
+
+    line-height:1.5;
+}
+
+
+.selected-members-note{
+    color:#475569;
+    font-size:14px;
+}
+.configure-upload-members-btn{
+
+    padding:10px 18px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#5b50f6;
+
+    color:white;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+.configure-upload-members-btn:hover{
+    background:#4b42d8;
+}
+
+.small-info-modal h3{
+
+    margin-bottom:10px;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:#111827;
+}
+
+.small-info-modal p{
+
+    color:#6b7280;
+
+    line-height:1.6;
+
+    font-size:15px;
+
+    margin-bottom:28px;
+}
+
+.small-info-modal{
+
+    width:390px;
+    max-width:90%;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:32px 30px;
+
+    position:relative;
+
+    text-align:center;
+
+    animation:fadeIn .2s ease;
+}
+.small-info-icon {
+    width: 64px;
+    height: 64px;
+
+    font-size: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    background: #f5f3ff;
+    color: #5b4cf0;
+}
+.albumpg-primary-btn{
+    border:none;
+    cursor:pointer;
+
+    background:#4f46e5;
+    color:white;
+
+    padding:12px 22px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    transition:.2s;
+}
+
+.albumpg-primary-btn:hover{
+    background:#4338ca;
+}
+.upload-members-modal {
+    background: white;
+    width: 500px;
+    max-width: 90%;
+    border-radius: 20px;
+    padding: 32px;
+    box-sizing: border-box;
+}
+
+.upload-members-modal h2 {
+    margin-bottom: 10px;
+    color: #0f172a;
+}
+
+.upload-members-modal p {
+    color: #64748b;
+    margin-bottom: 20px;
+}
+.upload-member-search{
+    width:100%;
+    padding:12px 16px;
+    margin:18px 0;
+    border:1px solid #d9def3;
+    border-radius:12px;
+    font-size:15px;
+    outline:none;
+    transition:0.2s;
+    box-sizing:border-box;
+}
+
+.upload-member-search:focus{
+    border-color:#635BFF;
+    box-shadow:0 0 0 3px rgba(99,91,255,0.12);
+}
+.upload-members-list {
+    max-height: 320px;
+    overflow-y: auto;
+    margin-bottom: 24px;
+}
+.upload-member-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 12px 14px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+
+    margin-bottom: 10px;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+.upload-member-item:hover {
+    background: #f8fafc;
+}
+.upload-member-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+.upload-member-info{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex:1;
+}
+.upload-member-avatar{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    object-fit:cover;
+}
+.upload-member-avatar-fallback{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:#635BFF;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:600;
+    flex-shrink:0;
+}
+.upload-member-details{
+    display:flex;
+    flex-direction:column;
+}
+
+.upload-member-name{
+    font-weight:600;
+    color:#1f2937;
+}
+
+.upload-member-role{
+    font-size:13px;
+    color:#6b7280;
+    margin-top:2px;
+}
+.btn-cancel{
+    padding: 12px 22px;
+    border-radius: 12px;
+    font-weight: 600;
+    border: 1px solid #e2e8f0;
+    background: #fff;
+    color: #475569;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-cancel:hover{
+    background: #f8fafc;
+}
+.btn-cancel:disabled{
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}

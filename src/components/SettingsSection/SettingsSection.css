@@ -1,0 +1,14 @@
+.albumpg-empty-card{
+    background:white;
+
+    border-radius:24px;
+
+    padding:80px;
+
+    text-align:center;
+
+    color:#64748b;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.04);
+}

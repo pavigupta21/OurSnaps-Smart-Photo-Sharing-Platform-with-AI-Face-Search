@@ -1,0 +1,42 @@
+.albumpg-tabs{
+    display:flex;
+    gap:12px;
+
+    padding:25px 70px;
+
+    background:white;
+
+    border-bottom:
+    1px solid #e5e7eb;
+}
+
+.albumpg-tabs button{
+    border:none;
+    cursor:pointer;
+
+    background:#f1f5f9;
+
+    padding:12px 20px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    transition:.2s;
+}
+
+.albumpg-tabs button:hover{
+    background:#e2e8f0;
+}
+
+.albumpg-tab-active{
+    background:#4f46e5 !important;
+    color:white;
+}
+@media(max-width:900px){
+
+    .albumpg-tabs{
+        padding:20px 25px;
+        overflow-x:auto;
+    }
+}

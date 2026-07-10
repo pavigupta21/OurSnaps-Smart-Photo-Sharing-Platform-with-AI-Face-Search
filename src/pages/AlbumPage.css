@@ -1,0 +1,187 @@
+.albumpg-page{
+    min-height:100vh;
+    background:#f8fafc;
+}
+
+
+.albumpg-content{
+    padding:40px 70px;
+}
+
+
+@media(max-width:900px){
+
+    .albumpg-content{
+        padding:25px;
+    }
+}
+
+.albumpg-created{
+    font-size:15px;   
+    color:#b4b4b4;
+    margin-top:15px;
+}
+
+
+
+
+.primary-btn{
+
+    width:140px;
+
+    margin:auto;
+}
+
+
+
+.delete-confirm-group {
+    text-align: left;
+    margin-bottom: 28px;
+}
+
+.delete-confirm-group label {
+    display: block;
+    font-size: .85rem;
+    color: #475569;
+    margin-bottom: 8px;
+}
+
+.delete-confirm-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid #fecaca;
+    border-radius: 10px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.delete-confirm-input:focus {
+    outline: none;
+    border-color: #dc2626;
+    box-shadow: 0 0 0 4px rgba(220, 38, 38, .1);
+}
+
+
+
+.face-index-status{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin:16px 0 22px;
+
+    padding:14px 18px;
+
+    border-radius:14px;
+
+    background:#fff8e8;
+
+    border:1px solid #ffd67d;
+
+}
+
+.face-index-status strong{
+
+    display:block;
+
+    color:#9c6400;
+
+    font-size:15px;
+
+    margin-bottom:4px;
+
+}
+
+.face-index-status p{
+
+    margin:0;
+
+    font-size:13px;
+
+    color:#7a7a7a;
+
+    line-height:1.5;
+
+}
+.face-index-spinner{
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    border:3px solid #ffe3a0;
+
+    border-top-color:#f5a623;
+
+    animation:faceIndexSpin 1s linear infinite;
+
+    flex-shrink:0;
+
+}
+
+@keyframes faceIndexSpin{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+
+.face-outline{
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    width:220px;
+
+    height:280px;
+
+    transform:translate(-50%,-50%);
+
+    border:4px solid white;
+
+    border-radius:50%;
+
+    box-shadow:
+
+    0 0 0 9999px rgba(0,0,0,.25);
+
+    pointer-events:none;
+
+}
+
+
+
+
+
+.face-registering-screen{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:60px 40px;
+    text-align:center;
+}
+
+
+
+.register-steps{
+    margin-top:24px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    color:#666;
+}
