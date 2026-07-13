@@ -57,48 +57,6 @@ Permissions include:
 
 ---
 
-# 🏗️ System Architecture
-
-```
-React Frontend
-        │
-        ▼
-Axios API Requests
-        │
-        ▼
-Node.js + Express Backend
-        │
-        ├──────────────► PostgreSQL
-        │                   │
-        │                   ├── Albums
-        │                   ├── Users
-        │                   ├── Photos
-        │                   └── pgvector Face Embeddings
-        │
-        ├──────────────► Cloudinary
-        │                   │
-        │                   └── Image Storage
-        │
-        ├──────────────► BullMQ Queue
-        │                   │
-        ▼                   ▼
-               Redis Queue
-                    │
-                    ▼
-          Python Face Processing Service
-                    │
-                    ▼
-         MediaPipe Face Detection
-                    │
-                    ▼
-         Generate Face Embeddings
-                    │
-                    ▼
-      Store Embeddings in PostgreSQL (pgvector)
-```
-
----
-
 # 🛠 Tech Stack
 
 ## Frontend
@@ -234,10 +192,3 @@ EMAIL_API_KEY=...
 
 ---
 
-# Author
-
-**Pavi Gupta**
-
-LinkedIn: https://linkedin.com/in/pavi-gupta
-
-GitHub: https://github.com/pavigupta21
