@@ -162,7 +162,7 @@ Permissions include:
 ## Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/OurSnaps.git
+git clone https://github.com/pavigupta21/OurSnaps.git
 ```
 
 ---
@@ -192,6 +192,8 @@ npm run dev
 cd face-service
 
 pip install -r requirements.txt
+
+./venv/Scripts/Activate
 
 python app.py
 ```
