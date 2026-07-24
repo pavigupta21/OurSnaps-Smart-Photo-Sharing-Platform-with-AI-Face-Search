@@ -325,7 +325,32 @@ router.get(
 router.post(
   "/:albumId/photos",
   authMiddleware,
-  upload.array("photos", 100),
+  // upload.array("photos", 100),
+  (req, res, next) => {
+    upload.array("photos", 100)(req, res, (err) => {
+
+      if (err instanceof multer.MulterError) {
+
+        if (err.code === "LIMIT_UNEXPECTED_FILE") {
+          return res.status(400).json({
+            success: false,
+            message: "You can upload a maximum of 100 photos at a time."
+          });
+        }
+
+        return res.status(400).json({
+          success: false,
+          message: err.message
+        });
+      }
+
+      if (err) {
+        return next(err);
+      }
+
+      next();
+    });
+  },
   async (req, res) => {
 
     try {
@@ -439,6 +464,9 @@ router.post(
     uploadedPhotos.push(
         photoResult.rows[0]
     );
+    console.log(
+    `Uploaded ${photoResult.rows[0].id} at ${new Date().toLocaleTimeString()}`
+);
     await faceQueue.add(
     "process-face",
     {

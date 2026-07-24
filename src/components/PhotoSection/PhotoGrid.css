@@ -298,3 +298,37 @@
     font-size: 12px;
     color: #6b7280;
 }
+@media (max-width: 600px) {
+
+    .private-gallery-container{
+        padding: 16px;
+        min-height: 420px;
+    }
+    .private-gallery-overlay-card{
+
+    width:100%;
+    max-width:450px;
+}
+.private-lock-icon{
+
+    width:64px;
+    height:64px;
+    font-size:30px;
+
+}
+
+.private-gallery-overlay-card h3{
+
+    font-size:28px;
+
+}
+
+.private-access-item{
+
+    padding:12px;
+    font-size:15px;
+
+}
+
+
+}

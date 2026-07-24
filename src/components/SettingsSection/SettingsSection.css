@@ -12,3 +12,21 @@
     box-shadow:
     0 10px 30px rgba(0,0,0,.04);
 }
+@media (max-width:768px){
+
+    .albumpg-empty-card{
+
+        padding:0;
+
+        background:white;
+
+        box-shadow:
+    0 10px 30px rgba(0,0,0,.04);
+
+        border-radius:0;
+
+        text-align: center;
+        
+    }
+
+}

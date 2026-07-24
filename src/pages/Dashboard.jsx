@@ -371,8 +371,16 @@ const handleAlbumCoverChange = (e) => {
           <span>OurSnaps</span>
         </div>
         <nav className="navbar-links">
-          <button onClick={() => setShowCreateAlbumModal(true)}>Create Album</button>
-          <button onClick={() => setShowJoinModal(true)}>Join Album</button>
+          <button onClick={() => {
+            setShowCreateAlbumModal(true);
+            setShowMenu(false);}}>
+            Create Album
+            </button>
+          <button onClick={() => {
+            setShowJoinModal(true);
+            setShowMenu(false);}}>
+            Join Album
+            </button>
         </nav>
         <div className="mobile-menu-btn">
           <button
@@ -421,8 +429,14 @@ const handleAlbumCoverChange = (e) => {
         </div>
         {showMenu && (
           <div className="mobile-menu">
-            <button onClick={() => setShowCreateAlbumModal(true)}>Create Album</button>
-            <button onClick={() => setShowJoinModal(true)}>Join Album</button>
+            <button onClick={() => {
+              setShowCreateAlbumModal(true);
+              setShowMenu(false);
+            }}>Create Album</button>
+            <button onClick={() => {
+              setShowJoinModal(true);
+              setShowMenu(false);
+            }}>Join Album</button>
           </div>
         )}
       </header>

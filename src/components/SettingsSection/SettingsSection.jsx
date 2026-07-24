@@ -22,7 +22,7 @@ function SettingsSection({
     uploadMembers,
     fetchAlbum,
     fetchNewFacePhotos,
-    fetchSettings
+    fetchSettings,
 })
 {   
     const navigate = useNavigate();
@@ -32,6 +32,7 @@ function SettingsSection({
     const [showNoMembersPopup, setShowNoMembersPopup] = useState(false);
     const [showUploadMembersModal,setShowUploadMembersModal] = useState(false);
     const [uploadMemberSearch, setUploadMemberSearch] = useState("");
+    const [tempSelectedUploadMembers, setTempSelectedUploadMembers] = useState([]);
 
     /*SaveSettings*/
     const [savingSettings, setSavingSettings] = useState(false);
@@ -112,7 +113,7 @@ const saveUploadMembers = async () => {
         await axios.post(
             `${API_URL}/api/albums/${albumId}/upload-members`,
             {
-                memberIds:selectedUploadMembers
+                memberIds:tempSelectedUploadMembers
             },
             {
                 headers:{
@@ -125,6 +126,7 @@ const saveUploadMembers = async () => {
             "Upload members updated successfully",
             "success"
         );
+        setSelectedUploadMembers(tempSelectedUploadMembers);
 
         setShowUploadMembersModal(false);
 
@@ -213,6 +215,8 @@ const deleteAlbum = async () => {
                     filteredUploadMembers={filteredUploadMembers}
                     setSelectedUploadMembers={setSelectedUploadMembers}
                     saveUploadMembers={saveUploadMembers}
+                    tempSelectedUploadMembers={tempSelectedUploadMembers}
+                    setTempSelectedUploadMembers={setTempSelectedUploadMembers}
                 />
                 <SaveSettings
                     hasUnsavedChanges={hasUnsavedChanges}

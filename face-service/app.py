@@ -1,12 +1,8 @@
-from sklearn.metrics.pairwise import cosine_similarity
-import traceback
 from flask import Flask
 from flask_cors import CORS
 from face_utils import (extract_faces_from_url,extract_faces_from_base64)
 from flask import Flask, jsonify, request
 from storage import save_embedding
-import numpy as np
-
 
 app = Flask(__name__)
 CORS(
@@ -90,39 +86,39 @@ def register_face():
     })
 
 
-@app.route("/search-face", methods=["POST"])
-def search_face():
+# @app.route("/search-face", methods=["POST"])
+# def search_face():
 
-    data = request.get_json()
+#     data = request.get_json()
 
-    user_embedding = np.array(
-        data["userEmbedding"]
-    ).reshape(1, -1)
+#     user_embedding = np.array(
+#         data["userEmbedding"]
+#     ).reshape(1, -1)
 
-    matched_photo_ids = []
+#     matched_photo_ids = []
 
-    for photo in data["photoEmbeddings"]:
+#     for photo in data["photoEmbeddings"]:
 
-        photo_embedding = np.array(
-            photo["embedding"]
-        ).reshape(1, -1)
+#         photo_embedding = np.array(
+#             photo["embedding"]
+#         ).reshape(1, -1)
 
-        similarity = cosine_similarity(
-            user_embedding,
-            photo_embedding
-        )[0][0]
+#         similarity = cosine_similarity(
+#             user_embedding,
+#             photo_embedding
+#         )[0][0]
 
-        if similarity >= 0.55:
+#         if similarity >= 0.55:
 
-            matched_photo_ids.append(
-                photo["photo_id"]
-            )
+#             matched_photo_ids.append(
+#                 photo["photo_id"]
+#             )
 
-    return jsonify({
+#     return jsonify({
 
-        "matchedPhotoIds": matched_photo_ids
+#         "matchedPhotoIds": matched_photo_ids
 
-    })
+#     })
 
 if __name__ == "__main__":
 

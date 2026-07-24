@@ -211,6 +211,12 @@ const fetchUploadMembers = async () => {
         response.data.photos.forEach(photo => {
             console.log(photo.id, photo.face_indexed);
         });
+        console.table(
+            response.data.photos.map(photo => ({
+                id: photo.id,
+                indexed: photo.face_indexed
+            }))
+        );
         setPhotos(response.data.photos);
 
     }

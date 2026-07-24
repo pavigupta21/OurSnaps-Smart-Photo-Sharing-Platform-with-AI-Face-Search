@@ -10,7 +10,14 @@ const connection = new IORedis({
 const faceQueue = new Queue(
     "face-processing",
     {
-        connection
+        connection,
+        defaultJobOptions: {
+            attempts: 2,
+            backoff: {
+                type: "exponential",
+                delay: 1000
+            }
+        }
     }
 );
 

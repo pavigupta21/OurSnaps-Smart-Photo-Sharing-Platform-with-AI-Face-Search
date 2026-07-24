@@ -8,6 +8,11 @@ import PhotoGrid from "./PhotoGrid";
 import axios from "axios";
 import socket from "../../socket";
 import "./PhotoSection.css";
+import { loadGoogleSDK } from "../../utils/loadGoogleSDK";
+import { getGoogleAccessToken } from "../../utils/googleAuth";
+import { openGooglePicker } from "../../utils/googlePicker";
+import { downloadDriveFiles } from "../../utils/downloadDriveFiles";
+import googleDriveLogo from "../../assets/google-drive.png";
 
 function PhotoSection ({
     role,
@@ -51,6 +56,7 @@ function PhotoSection ({
     token
     
 }){
+    
     /* PhotoHeader*/
     const [selectedFiles, setSelectedFiles] = useState([]);
     const [showUploadModal, setShowUploadModal] = useState(false);
@@ -71,6 +77,18 @@ function PhotoSection ({
 
     /*PhotoGrid*/
     const [isDownloading, setIsDownloading] = useState(false);
+
+    useEffect(() => {
+
+    loadGoogleSDK()
+        .then(() => {
+            console.log("Google SDK Loaded");
+        })
+        .catch((err) => {
+            console.error(err);
+        });
+
+}, []);
     
     
 
@@ -160,6 +178,14 @@ const togglePhotoSelection = (photoId) => {
         {
             return;
         }
+        if(selectedFiles.length > 100)
+        {
+            triggerToast(
+                `You selected ${selectedFiles.length} photos. You can upload a maximum of 100 photos at a time.`,
+                "error"
+            );
+            return;
+        }
 
         setIsUploading(true);
         setUploadedCount(0);
@@ -191,8 +217,6 @@ const togglePhotoSelection = (photoId) => {
         }
     );
     
-
-
         setIsUploading(false);
 
 
@@ -494,6 +518,9 @@ const uploadPercentage =
                 </div>
 
             </div>
+            <div className="upload-limit-note">
+    ℹ️ You can upload a maximum of <strong>100 photos</strong> at a time.
+</div>
 
             <div className="upload-preview-list">
 
@@ -813,15 +840,69 @@ showUploadMethodModal && (
                 </p>
             </div>
 
-            <div className="upload-method-card disabled">
+            <div className="upload-method-card"
+                onClick={async () => {
+                    
+
+                try {
+
+                    const token = await getGoogleAccessToken();
+            setShowUploadMethodModal(false);
+
+        openGooglePicker({
+
+            accessToken: token,
+
+            apiKey:
+                import.meta.env.VITE_GOOGLE_API_KEY,
+
+            onPick: async (docs) => {
+
+    try {
+
+        const files = await downloadDriveFiles(
+            docs,
+            token
+        );
+
+        setSelectedFiles(files);
+        setShowUploadModal(true);
+
+    }
+    catch(err)
+    {
+        console.error(err);
+        triggerToast(
+            "Failed to import photos from Google Drive.",
+            "error"
+        );
+    }
+
+}
+
+        });
+
+                }
+                catch(err)
+                {
+                    console.error(err);
+                }
+
+            }}
+                >
 
                 <div className="upload-method-icon">
-                    ☁️
+                    <img
+                        src={googleDriveLogo}
+                        alt="Google Drive"
+                        className="google-drive-icon"
+                    />
                 </div>
 
                 <h3>Google Drive</h3>
 
-                <p>Coming Soon</p>
+                <p>Browse and upload photos</p>
+               
 
             </div>
 

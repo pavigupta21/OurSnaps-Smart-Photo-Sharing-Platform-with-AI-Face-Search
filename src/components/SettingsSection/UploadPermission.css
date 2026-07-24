@@ -340,3 +340,28 @@
     cursor: not-allowed;
     transform: none;
 }
+@media(max-width:768px){
+
+.albumpg-empty-card{
+
+    padding:0;
+    background:transparent;
+    box-shadow:none;
+
+}
+
+.album-settings-card{
+
+    padding:20px;
+
+    border-radius:18px;
+
+}
+
+.settings-radio-option{
+
+    padding:14px;
+
+}
+
+}

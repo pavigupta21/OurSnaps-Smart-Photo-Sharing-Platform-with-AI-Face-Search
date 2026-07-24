@@ -114,9 +114,12 @@ const worker = new Worker(
                 );
             }
 
+            // console.log(
+            //     `Photo ${photo_id} indexed successfully`
+            // );
             console.log(
-                `Photo ${photo_id} indexed successfully`
-            );
+    `Photo ${photo_id} indexing completed at ${new Date().toLocaleTimeString()}`
+);
 
             console.log(
                 `${result.rows[0].remaining} photos remaining`
@@ -135,6 +138,7 @@ const worker = new Worker(
     },
 
     {
-        connection
+        connection,
+        concurrency:3
     }
 );

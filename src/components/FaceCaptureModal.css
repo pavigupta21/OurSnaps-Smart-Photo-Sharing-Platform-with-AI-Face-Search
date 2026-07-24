@@ -173,3 +173,70 @@
     background:#cbd5e1;
 
 }
+@media (max-width: 600px){
+
+    .face-modal{
+
+        width: calc(100vw - 24px);
+
+        max-width: none;
+
+        max-height: calc(100vh - 24px);
+
+        overflow-y: auto;
+
+        padding: 22px;
+
+        border-radius: 18px;
+
+    }
+     .camera-preview{
+
+        height:320px;
+
+    }
+    .face-guide{
+
+        width:170px;
+        height:220px;
+
+    }
+    .camera-frame{
+
+        margin:18px auto;
+
+    }
+
+    .face-status{
+
+        margin-top:12px;
+
+    }
+.face-modal-actions{
+
+        flex-direction:column-reverse;
+
+        gap:12px;
+
+    }
+
+    .face-modal-actions button{
+
+        width:100%;
+
+    }
+    .face-modal h2{
+
+        font-size:30px;
+
+    }
+
+    .face-modal p{
+
+        font-size:15px;
+
+        margin-bottom:14px;
+
+    }
+
+}

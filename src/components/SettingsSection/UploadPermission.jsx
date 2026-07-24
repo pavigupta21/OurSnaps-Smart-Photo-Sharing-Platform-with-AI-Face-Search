@@ -15,9 +15,14 @@ function UploadPermission({
     setUploadMemberSearch,
     filteredUploadMembers,
     setSelectedUploadMembers,
-    saveUploadMembers
+    saveUploadMembers,
+    tempSelectedUploadMembers,
+    setTempSelectedUploadMembers
 })
-{
+{   
+    
+
+    
     return(
         <>
             <div className="album-settings-card settings-section-card">
@@ -121,6 +126,7 @@ function UploadPermission({
             onClick={async () => {
 
                 await fetchUploadMembers();
+                setTempSelectedUploadMembers(selectedUploadMembers);
                 {
 
                     if(uploadMembers.length === 0)
@@ -221,19 +227,19 @@ function UploadPermission({
 
             <input
                 type="checkbox"
-                checked={selectedUploadMembers.includes(member.user_id)}
+                checked={tempSelectedUploadMembers.includes(member.user_id)}
                 onChange={(e) => {
 
                     if(e.target.checked)
                     {
-                        setSelectedUploadMembers(prev => [
+                        setTempSelectedUploadMembers(prev => [
                             ...prev,
                             member.user_id
                         ]);
                     }
                     else
                     {
-                        setSelectedUploadMembers(prev =>
+                        setTempSelectedUploadMembers(prev =>
                             prev.filter(
                                 id => id !== member.user_id
                             )
