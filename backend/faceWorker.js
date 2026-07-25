@@ -37,7 +37,7 @@ const worker = new Worker(
         try {
 
             await axios.post(
-                "http://127.0.0.1:5001/detect",
+                `${process.env.FACE_SERVICE_URL}/detect`,
                 {
                     image_path,
                     album_id,
@@ -74,7 +74,7 @@ const worker = new Worker(
                 ]
             );
             await axios.post(
-                "http://localhost:5000/internal/photo-indexed",
+                `${process.env.BACKEND_URL}/internal/photo-indexed`,
                 {
                     albumId: album_id,
                     photoId: photo_id
@@ -103,7 +103,7 @@ const worker = new Worker(
                     album_id
                 ]);
                 await axios.post(
-                    "http://localhost:5000/internal/face-index-ready",
+                     `${process.env.BACKEND_URL}/internal/face-index-ready`,
                     {
                         albumId: album_id
                     }

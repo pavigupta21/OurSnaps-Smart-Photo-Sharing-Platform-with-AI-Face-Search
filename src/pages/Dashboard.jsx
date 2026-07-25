@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 import defaultAlbumCover from "../assets/DefaultAlbumCover.png";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function Dashboard() {
   const navigate = useNavigate();
 
@@ -70,7 +72,7 @@ const filteredAlbums = albums.filter(album =>
 
         const response =
         await fetch(
-            "http://localhost:5000/api/albums/join",
+             `${API_URL}/api/albums/join`,
             {
                 method:"POST",
 
@@ -126,7 +128,7 @@ const filteredAlbums = albums.filter(album =>
       const token = localStorage.getItem("token");
 
       const response = await fetch(
-        "http://localhost:5000/api/albums/my-albums",
+        `${API_URL}/api/albums/my-albums`,
         {
           headers: {
             Authorization: `Bearer ${token}`
@@ -216,7 +218,7 @@ const filteredAlbums = albums.filter(album =>
     const token = localStorage.getItem("token");
 
     const response = await fetch(
-      "http://localhost:5000/api/auth/update-profile",
+      `${API_URL}/api/auth/update-profile`,
       {
         method: "PUT",
         headers: {
@@ -289,7 +291,7 @@ const filteredAlbums = albums.filter(album =>
       localStorage.getItem("token");
 
     const response = await fetch(
-      "http://localhost:5000/api/albums/create",
+      `${API_URL}/api/albums/create`,
       {
         method: "POST",
         headers: {

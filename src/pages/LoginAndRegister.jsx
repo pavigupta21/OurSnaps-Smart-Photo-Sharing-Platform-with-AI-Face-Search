@@ -4,6 +4,8 @@ import albumIllustration from '../assets/album_illustration.png';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 
 export default function LoginAndRegister({ onAuthSuccess }) {
   const navigate = useNavigate();
@@ -115,7 +117,7 @@ useEffect(() => {
     try {
 
       await axios.post(
-      "http://localhost:5000/api/auth/login",
+      `${API_URL}/api/auth/login`,
       {
           email: loginData.email,
           password: loginData.password
@@ -180,7 +182,7 @@ setTimeout(() => {
     try {
 
     const response = await axios.post(
-        "http://localhost:5000/api/auth/register",
+        `${API_URL}/api/auth/register`,
         {
             fullName: registerData.fullName,
             email: registerData.email,
@@ -226,7 +228,7 @@ try {
     if (otpMode === "register") {
 
         response = await axios.post(
-            "http://localhost:5000/api/auth/verify-register-otp",
+            `${API_URL}/api/auth/verify-register-otp`,
             {
                 email: otpEmail,
                 otp
@@ -238,7 +240,7 @@ try {
     } else {
 
         response = await axios.post(
-            "http://localhost:5000/api/auth/verify-login-otp",
+            `${API_URL}/api/auth/verify-login-otp`,
             {
                 email: otpEmail,
                 otp
@@ -304,7 +306,7 @@ const handleResendOtp = async () => {
         if (otpMode === "register") {
 
             await axios.post(
-                "http://localhost:5000/api/auth/register",
+                `${API_URL}/api/auth/register`,
                 {
                     fullName: registerData.fullName,
                     email: registerData.email,
@@ -315,7 +317,7 @@ const handleResendOtp = async () => {
         } else {
 
             await axios.post(
-                "http://localhost:5000/api/auth/login",
+                `${API_URL}/api/auth/login`,
                 {
                     email: loginData.email,
                     password: loginData.password

@@ -10,7 +10,7 @@ import MembersSection from "../components/MembersSection/MembersSection";
 import SettingsSection from "../components/SettingsSection/SettingsSection";
 import "./AlbumPage.css";
 
-const API_URL = "http://localhost:5000";
+const API_URL = import.meta.env.VITE_API_URL;
 
 function AlbumPage() {
     const navigate = useNavigate();
@@ -73,7 +73,7 @@ function AlbumPage() {
         const token = localStorage.getItem("token");
 
         const response = await axios.get(
-            "http://localhost:5000/api/face-search/my-face",
+            `${API_URL}/api/face-search/my-face`,
             {
                 headers:{
                     Authorization:`Bearer ${token}`
@@ -100,7 +100,7 @@ function AlbumPage() {
         const token = localStorage.getItem("token");
 
         const response = await axios.get(
-            `http://localhost:5000/api/face-search/${albumId}/new-face-photos`,
+           `${API_URL}/api/face-search/${albumId}/new-face-photos`,
             {
                 headers: {
                     Authorization: `Bearer ${token}`
@@ -739,7 +739,7 @@ useEffect(() => {
 
         const response =
         await axios.get(
-            `http://localhost:5000/api/albums/${albumId}/invite`,
+            `${API_URL}/api/albums/${albumId}/invite`,
             {
                 headers:{
                     Authorization:`Bearer ${token}`
@@ -772,7 +772,7 @@ useEffect(() => {
             const token = localStorage.getItem("token");
 
             const response = await axios.get(
-                `http://localhost:5000/api/albums/${albumId}`,
+                `${API_URL}/api/albums/${albumId}`,
                 {
                     headers:{
                         Authorization:`Bearer ${token}`
@@ -798,7 +798,7 @@ useEffect(() => {
             localStorage.getItem("token");
 
         const response = await axios.get(
-            `http://localhost:5000/api/albums/${albumId}/members`,
+            `${API_URL}/api/albums/${albumId}/members`,
             {
                 headers:{
                     Authorization:`Bearer ${token}`

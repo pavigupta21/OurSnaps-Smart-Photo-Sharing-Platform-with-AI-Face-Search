@@ -207,7 +207,7 @@ const togglePhotoSelection = (photoId) => {
 
 
     await axios.post(
-        `http://localhost:5000/api/albums/${albumId}/photos`,
+        `${API_URL}/api/albums/${albumId}/photos`,
         formData,
         {
             headers: {
@@ -255,7 +255,7 @@ const handleDeletePhotos = async () => {
         const token = localStorage.getItem("token");
 
         await axios.delete(
-            `http://localhost:5000/api/albums/${albumId}/photos`,
+            `${API_URL}/api/albums/${albumId}/photos`,
             {
                 headers: {
                     Authorization: `Bearer ${token}`

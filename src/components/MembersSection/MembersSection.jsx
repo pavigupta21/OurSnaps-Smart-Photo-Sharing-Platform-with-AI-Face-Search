@@ -31,7 +31,7 @@ function MembersSection({
             localStorage.getItem("token");
 
         await axios.post(
-            `http://localhost:5000/api/albums/${albumId}/invite`,
+             `${import.meta.env.VITE_API_URL}/api/albums/${albumId}/invite`,
             {
                 validity: inviteValidity
             },
@@ -59,7 +59,7 @@ function MembersSection({
         localStorage.getItem("token");
 
         await axios.delete(
-            `http://localhost:5000/api/albums/${albumId}/members/${userId}`,
+            `${import.meta.env.VITE_API_URL}/api/albums/${albumId}/members/${userId}`,
             {
                 headers:{
                     Authorization:`Bearer ${token}`
@@ -133,7 +133,7 @@ const updateMemberRole = async (userId, newRole) => {
             localStorage.getItem("token");
 
         await axios.patch(
-            `http://localhost:5000/api/albums/${albumId}/members/${userId}/role`,
+            `${import.meta.env.VITE_API_URL}/api/albums/${albumId}/members/${userId}/role`,
             {
                 role: newRole
             },

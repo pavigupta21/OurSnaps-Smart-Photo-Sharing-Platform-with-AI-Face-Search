@@ -3,13 +3,17 @@ from flask_cors import CORS
 from face_utils import (extract_faces_from_url,extract_faces_from_base64)
 from flask import Flask, jsonify, request
 from storage import save_embedding
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 app = Flask(__name__)
 CORS(
     app,
     resources={
         r"/*": {
-            "origins": "http://localhost:5173"
+            "origins": os.getenv("FRONTEND_URL")
         }
     }
 )
@@ -86,39 +90,6 @@ def register_face():
     })
 
 
-# @app.route("/search-face", methods=["POST"])
-# def search_face():
-
-#     data = request.get_json()
-
-#     user_embedding = np.array(
-#         data["userEmbedding"]
-#     ).reshape(1, -1)
-
-#     matched_photo_ids = []
-
-#     for photo in data["photoEmbeddings"]:
-
-#         photo_embedding = np.array(
-#             photo["embedding"]
-#         ).reshape(1, -1)
-
-#         similarity = cosine_similarity(
-#             user_embedding,
-#             photo_embedding
-#         )[0][0]
-
-#         if similarity >= 0.55:
-
-#             matched_photo_ids.append(
-#                 photo["photo_id"]
-#             )
-
-#     return jsonify({
-
-#         "matchedPhotoIds": matched_photo_ids
-
-#     })
 
 if __name__ == "__main__":
 

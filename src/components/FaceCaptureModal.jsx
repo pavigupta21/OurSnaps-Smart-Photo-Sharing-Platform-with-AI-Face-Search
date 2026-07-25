@@ -45,7 +45,7 @@ const FaceCaptureModal = ({ onClose, onRegistered }) => {
             const token = localStorage.getItem("token");
 
             await axios.post(
-                "http://localhost:5000/api/face-search/register-face",
+                 `${import.meta.env.VITE_API_URL}/api/face-search/register-face`,
                 {
                     image: imageSrc
                 },
