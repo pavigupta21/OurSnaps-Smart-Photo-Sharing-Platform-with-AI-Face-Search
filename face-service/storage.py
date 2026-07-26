@@ -3,18 +3,11 @@ import os
 import psycopg2
 from pgvector.psycopg2 import register_vector
 from dotenv import load_dotenv
-from pathlib import Path
 
-load_dotenv(
-    Path(__file__).resolve().parent.parent / "backend" / ".env"
-)
+load_dotenv()
 
 conn = psycopg2.connect(
-    host=os.getenv("DB_HOST"),
-    database=os.getenv("DB_NAME"),
-    user=os.getenv("DB_USER"),
-    password=os.getenv("DB_PASSWORD"),
-    port=os.getenv("DB_PORT")
+    os.getenv("DATABASE_URL")
 )
 
 register_vector(conn)
