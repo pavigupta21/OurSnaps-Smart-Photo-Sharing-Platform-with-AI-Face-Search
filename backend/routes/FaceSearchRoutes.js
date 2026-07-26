@@ -294,6 +294,10 @@ router.post(
             }
             
             const userEmbedding = faceEmbeddingResult.rows[0].embedding;
+            console.log(typeof userEmbedding);
+            console.log(Array.isArray(userEmbedding));
+            console.log(userEmbedding.length);
+            console.log(userEmbedding.slice(0,5));
             console.log(userEmbedding);
             console.log(typeof userEmbedding);
             
@@ -349,7 +353,7 @@ router.post(
 
             let photosToSearchResult;
             let matchedPhotosResult;
-            const threshold = 0.45;
+            const threshold = 0.50;
 
             if (searchMode === "full") {
 
@@ -432,6 +436,8 @@ router.post(
                 );
 
             }
+            console.log("Matched rows:", matchedPhotosResult.rows);
+            console.log("Matched count:", matchedPhotosResult.rows.length);
 
             const matchedPhotoIds = matchedPhotosResult.rows.map(
                 row => row.photo_id

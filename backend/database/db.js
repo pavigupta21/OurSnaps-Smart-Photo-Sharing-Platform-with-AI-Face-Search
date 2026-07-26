@@ -1,5 +1,5 @@
 const { Pool } = require("pg");
-
+console.log("DATABASE_URL:", process.env.DATABASE_URL);
 const pool = new Pool(
     process.env.DATABASE_URL
         ? {
@@ -16,5 +16,8 @@ const pool = new Pool(
               port: process.env.DB_PORT,
           }
 );
+pool.query("SELECT current_database()")
+    .then(res => console.log("Backend DB:", res.rows[0].current_database))
+    .catch(console.error);
 
 module.exports = pool;

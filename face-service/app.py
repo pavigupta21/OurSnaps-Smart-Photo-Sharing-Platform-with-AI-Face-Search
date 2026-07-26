@@ -1,3 +1,4 @@
+import face_utils
 from flask import Flask
 from flask_cors import CORS
 from face_utils import (extract_faces_from_url,extract_faces_from_base64)
@@ -36,6 +37,8 @@ def detect():
     photo_id = data["photo_id"]
 
     faces = extract_faces_from_url(image_path)
+    print(f"Album: {album_id}, Photo: {photo_id}")
+    print(f"Detected {len(faces)} faces")
 
     for face in faces:
 
