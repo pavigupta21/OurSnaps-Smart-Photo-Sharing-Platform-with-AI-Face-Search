@@ -9,7 +9,7 @@ from insightface.app import FaceAnalysis
 
 
 face_app = FaceAnalysis(
-    name="buffalo_l"
+    name="buffalo_s"
 )
 
 face_app.prepare(
