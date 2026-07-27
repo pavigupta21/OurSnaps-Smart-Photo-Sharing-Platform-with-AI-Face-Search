@@ -353,7 +353,7 @@ router.post(
 
             let photosToSearchResult;
             let matchedPhotosResult;
-            const threshold = 0.50;
+            const threshold = 0.45;
 
             if (searchMode === "full") {
 
