@@ -60,6 +60,11 @@
     .albumpg-overlay h1{
         font-size:2rem;
     }
+    .leave-album-btn{
+        width:100%;
+        margin-top:18px;
+        text-align:center;
+    }
 }
 .leave-album-modal{
     background:white;
@@ -163,12 +168,11 @@
     cursor:not-allowed;
 }
 .leave-album-btn{
-    margin-left:12px;
-    padding:12px;
-    /* padding:10px 18px; */
-    margin-top:15px;
+    margin-top:18px;
 
-    width:10%;
+    align-self:flex-start;
+
+    padding:12px 20px;
 
     border:none;
     border-radius:12px;
