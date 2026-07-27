@@ -477,6 +477,7 @@ const handleMemberRoleUpdated = async ({
 
     await fetchMembers();
     await fetchAlbum();
+    await fetchUploadPermission();
 
     if (Number(userId) === Number(currentUserId)) {
 

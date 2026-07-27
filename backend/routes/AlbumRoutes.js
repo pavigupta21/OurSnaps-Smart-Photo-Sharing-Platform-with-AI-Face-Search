@@ -1175,6 +1175,7 @@ router.patch(
         fullName,
         role
       );
+      uploadMembersUpdated(albumId);
      
       res.json({
         success:true,
