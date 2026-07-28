@@ -200,7 +200,7 @@ router.post(
         try {
 
             const response = await axios.post(
-                "http://127.0.0.1:5001/register-face",
+                `${process.env.FACE_SERVICE_URL}/register-face`,
                 {
                     image: req.body.image
                 }
