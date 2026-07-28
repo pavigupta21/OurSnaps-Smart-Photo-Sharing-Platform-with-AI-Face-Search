@@ -6,12 +6,7 @@ const pool = require("./database/db");
 
 const worker = new Worker(
     "face-processing",
-    processor,
-    {
-        concurrency: 2,
-        connection
-    },
-
+    
     async (job) => {
 
         const {
