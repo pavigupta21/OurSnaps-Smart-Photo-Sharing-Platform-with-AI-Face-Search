@@ -242,15 +242,4 @@ To ensure a responsive user experience, face indexing is processed asynchronousl
 ---
 
 
-# Future Improvements
-
-- Face clustering
-- Duplicate photo detection
-- Face recognition confidence tuning
-- Album activity feed
-- Mobile responsive UI
-- Cloud deployment
-- Multi-worker parallel indexing
-
----
 
