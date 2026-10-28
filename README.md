@@ -9,7 +9,7 @@ Instead of manually scrolling through hundreds of images after an event or trip,
 <p align="center">
 
 🌐 **Live Demo:** https://oursnaps.vercel.app
-
+> **Note:** Some backend services and features are temporarily unavailable due to hosting cost constraints. The complete source code and implementation are available in this repository.
 </p>
 
 ---
